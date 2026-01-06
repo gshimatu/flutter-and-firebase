@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'pages/login_page.dart';
 
 void main() async {
   // Indispensable pour que Firebase communique avec Flutter avant le lancement de l'app
   WidgetsFlutterBinding.ensureInitialized();
-  
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const MyApp());
 }
 
@@ -20,17 +19,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Mon TP Flutter',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const LoginPage(), 
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.blue,
+        ).copyWith(secondary: Colors.lightBlue),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const LoginPage(),
     );
-  }
-}
-
-// Page de login vide pour l'instant
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text("Page de Connexion")));
   }
 }
