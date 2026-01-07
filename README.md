@@ -119,12 +119,12 @@ lib/
 
 ## Contributeurs
 
-- [gshimatu](https://github.com/gshimatu) - Développeur principal
-- 
--
--
--
--
+- [gshimatu](https://github.com/gshimatu) - Développeur
+- [Horeb2025](https://github.com/Horeb2025) - Développeur
+- [jael785](https://github.com/jael785) - Développeur 
+- [niatipaola35-a11y](https://github.com/niatipaola35-a11y) - Développeur
+- [nmusekedi](https://github.com/nmusekedi) - Développeur
+- [Tovo2003](https://github.com/Tovo2003) - Développeur
 -
 -
 -
