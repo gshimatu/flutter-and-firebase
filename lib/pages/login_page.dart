@@ -64,6 +64,23 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
     }
   }
 
+  Future<void> _signInWithGoogle() async {
+    setState(() => _isLoading = true);
+    try {
+      await _authService.signInWithGoogle();
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const MenuPage()),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Erreur de connexion Google: $e')));
+    } finally {
+      setState(() => _isLoading = false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -175,7 +192,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton.icon(
-                    onPressed: null, // Bientôt disponible
+                    onPressed: _isLoading ? null : _signInWithGoogle,
                     icon: FaIcon(FontAwesomeIcons.google, color: Colors.white),
                     label: const Text('Continuer avec Google'),
                     style: ElevatedButton.styleFrom(

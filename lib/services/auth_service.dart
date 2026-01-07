@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn.standard();
 
   // Stream pour suivre l'état de l'auth
   Stream<User?> get authStateChanges => _auth.authStateChanges();
@@ -35,9 +37,33 @@ class AuthService {
     }
   }
 
+  // Connexion Google
+  Future<UserCredential?> signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if (googleUser == null) return null;
+
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      UserCredential userCredential = await _auth.signInWithCredential(
+        credential,
+      );
+      await _saveLoginState(true);
+      return userCredential;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   // Déconnexion
   Future<void> logout() async {
     await _auth.signOut();
+    await _googleSignIn.signOut();
     await _saveLoginState(false);
   }
 
