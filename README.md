@@ -127,7 +127,7 @@ lib/
 - [Tovo2003](https://github.com/Tovo2003) - Développeur
 - [grdiakiese-ops](https://github.com/grdiakiese-ops) - Développeur
 - [WARDOG-70](https://github.com/WARDOG-70) - Développeur
--
+- [Abiba-mugenya-deborah](https://github.com/Abiba-mugenya-deborah) - Développeur
 
 
 ## Licence
