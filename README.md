@@ -125,7 +125,7 @@ lib/
 - [niatipaola35-a11y](https://github.com/niatipaola35-a11y) - Développeur
 - [nmusekedi](https://github.com/nmusekedi) - Développeur
 - [Tovo2003](https://github.com/Tovo2003) - Développeur
-- [grdiakiese-ops](https://github.com/diakiese-ops) - Développeur
+- [grdiakiese-ops](https://github.com/grdiakiese-ops) - Développeur
 - [WARDOG-70](https://github.com/WARDOG-70) - Développeur
 -
 
