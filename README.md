@@ -128,6 +128,7 @@ lib/
 - [grdiakiese-ops](https://github.com/grdiakiese-ops) - Développeur
 - [WARDOG-70](https://github.com/WARDOG-70) - Développeur
 - [Abiba-mugenya-deborah](https://github.com/Abiba-mugenya-deborah) - Développeur
+- [Jonatan-code](https://github.com/Jonatan-code) - Développeur
 
 
 ## Licence
